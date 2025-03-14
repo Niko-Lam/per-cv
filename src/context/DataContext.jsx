@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
       email: 'lin.mecoo@gmail.com',
       phone: '+852-90628542',
       linkedin: 'https://www.linkedin.com/in/niko-lam-28988124a/',
-      github: 'https://github.com/yourusername',
+      github: 'https://github.com/Niko-Lam',
     }
   };
 
