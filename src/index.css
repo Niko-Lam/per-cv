@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary-light;
+  }
+  .border-gradient {
+    border-image: linear-gradient(
+        to right,
+        theme("colors.primary.DEFAULT"),
+        theme("colors.secondary.DEFAULT")
+      )
+      1;
+  }
+  .cyberpunk-card {
+    @apply relative overflow-hidden rounded-lg border border-opacity-30 transition-all duration-300 hover:shadow-lg;
+  }
+  .cyberpunk-card::before {
+    content: "";
+    pointer-events: none;
+    @apply absolute inset-0 bg-gradient-to-r from-primary/10 to-secondary/10 opacity-0 transition-opacity duration-300;
+  }
+  .cyberpunk-card:hover::before {
+    @apply opacity-100;
+  }
+  .cyberpunk-card:hover {
+    @apply border-primary/50;
+    transform: translateY(-2px);
+  }
+  .cyberpunk-button {
+    @apply relative overflow-hidden rounded-md px-4 py-2 font-medium transition-all duration-300;
+  }
+  .cyberpunk-button::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-0 transition-opacity duration-300;
+    z-index: -1;
+  }
+  .cyberpunk-button:hover::before {
+    @apply opacity-100;
+  }
+}
